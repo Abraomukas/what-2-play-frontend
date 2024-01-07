@@ -25,7 +25,10 @@ function Navbar() {
 	const currentLngCode = Cookies.get('i18next') || 'es';
 
 	return (
-		<nav className='navbar navbar-expand-lg navbar-light bg-light h-100 d-flex justify-content-between align-items-center'>
+		<nav
+			className={`navbar navbar-expand-lg ${
+				isDarkMode ? 'navbar-light bg-light' : 'navbar-dark bg-dark'
+			}  h-100 d-flex justify-content-between align-items-center`}>
 			<div className='navbar-left'>
 				{/* LINKS */}
 				<button
@@ -45,7 +48,7 @@ function Navbar() {
 							return (
 								<li key={index} className='nav-item'>
 									<Link key={index} className='nav-link' to={to}>
-										{label}
+										<strong>{label}</strong>
 									</Link>
 								</li>
 							);
@@ -62,6 +65,11 @@ function Navbar() {
 							height='80'
 							alt='H&D Logo'
 							loading='lazy'
+							style={{
+								filter: isDarkMode
+									? ''
+									: 'brightness(0) invert(1) grayscale(1)',
+							}}
 						/>
 					</a>
 				</div>
@@ -83,7 +91,7 @@ function Navbar() {
 									{isDarkMode ? (
 										<i className='fas fa-moon' style={{ color: '#000000' }} />
 									) : (
-										<i className='fas fa-sun' style={{ color: '#000000' }} />
+										<i className='fas fa-sun' style={{ color: '#ffffff' }} />
 									)}
 								</a>
 							</div>
@@ -98,7 +106,9 @@ function Navbar() {
 									role='button'
 									data-mdb-toggle='dropdown'
 									aria-expanded='false'>
-									<i className='fas fa-globe' style={{ color: '#000000' }}></i>
+									<i
+										className='fas fa-globe'
+										style={{ color: isDarkMode ? '#000000' : '#ffffff' }}></i>
 								</a>
 								<ul
 									className='dropdown-menu dropdown-menu-end'
