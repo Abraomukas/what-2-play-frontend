@@ -4,6 +4,8 @@
 	"private": true,
 	"description": "What2Play - ",
 	"dependencies": {
+		"i18next": "^23.7.16",
+		"js-cookie": "^3.0.5",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.21.1"
