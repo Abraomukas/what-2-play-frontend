@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Footer() {
+	const [isDarkMode, setIsDarkMode] = useState(false);
+
 	return (
-		<nav className='navbar navbar-expand-lg navbar-light bg-light h-100 d-flex justify-content-between align-items-center'>
+		<nav
+			className={`navbar navbar-expand-lg ${
+				isDarkMode ? 'navbar-light bg-light' : 'navbar-dark bg-dark'
+			}  h-100 d-flex justify-content-between align-items-center`}>
 			{/* GRID CONTAINER */}
 			<div className='container p-4'>
 				{/* SOCIAL MEDIA */}
@@ -36,7 +41,7 @@ function Footer() {
 						{/* GRID ROW */}
 						<div className='row d-flex justify-content-center'>
 							{/* GRID COLUMN */}
-							<div className='col-auto'>
+							<div className={`col-auto ${isDarkMode ? '' : 'text-white'}`}>
 								<p>
 									<strong>What 2 Play</strong>
 									<small> by Abraomukas</small>
