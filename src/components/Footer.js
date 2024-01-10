@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function Footer() {
-	const [isDarkMode, setIsDarkMode] = useState(false);
+	const currentMode = Cookies.get('darkMode') || true;
+	const isDarkMode = currentMode === false;
 
 	return (
 		<nav
