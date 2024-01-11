@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import i18next from 'i18next';
@@ -15,19 +15,27 @@ const sections = [
 ];
 
 function Navbar() {
-	const [isDarkMode, setIsDarkMode] = useState(false);
+	useEffect(() => {}, []);
+	const darkMode = Cookies.get('darkMode');
+
+	if (!darkMode) {
+		Cookies.set('darkMode', false);
+	}
+
+	const currentMode = Cookies.get('darkMode') || false;
+	const currentLngCode = Cookies.get('i18next') || 'es';
+
+	const [isDarkMode, setIsDarkMode] = useState(currentMode);
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 	const handleLoginStatus = () => {
 		setIsLoggedIn(!isLoggedIn);
 	};
 
-	const currentLngCode = Cookies.get('i18next') || 'es';
-
 	return (
 		<nav
 			className={`navbar navbar-expand-lg ${
-				isDarkMode ? 'navbar-light bg-light' : 'navbar-dark bg-dark'
+				isDarkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-light'
 			}  h-100 d-flex justify-content-between align-items-center`}>
 			<div className='navbar-left'>
 				{/* LINKS */}
@@ -67,8 +75,8 @@ function Navbar() {
 							loading='lazy'
 							style={{
 								filter: isDarkMode
-									? ''
-									: 'brightness(0) invert(1) grayscale(1)',
+									? 'brightness(0) invert(1) grayscale(1)'
+									: '',
 							}}
 						/>
 					</a>
@@ -76,94 +84,78 @@ function Navbar() {
 			</div>
 			<div className='navbar-right'>
 				<div className='container'>
-					<div className='row d-flex align-items-center'>
-						<div className='col'>
-							{/* DARK MODE */}
-							<div className='dropdown'>
-								<a
-									className='text-reset me-3'
-									href='#'
-									role='button'
-									aria-expanded='false'
-									onClick={() => {
-										setIsDarkMode(!isDarkMode);
-									}}>
-									{isDarkMode ? (
-										<i className='fas fa-moon' style={{ color: '#000000' }} />
-									) : (
-										<i className='fas fa-sun' style={{ color: '#ffffff' }} />
-									)}
-								</a>
+					{!isLoggedIn ? (
+						<div className='row d-flex align-items-center'>
+							<div className='col'>
+								{/* DARK MODE */}
+								<div className='dropdown'>
+									<a
+										className='text-reset me-3'
+										href='#'
+										role='button'
+										aria-expanded='false'
+										onClick={() => {
+											Cookies.set('darkMode', !isDarkMode);
+											setIsDarkMode(!isDarkMode);
+										}}>
+										{isDarkMode ? (
+											<i className='fas fa-sun' style={{ color: '#ffffff' }} />
+										) : (
+											<i className='fas fa-moon' style={{ color: '#000000' }} />
+										)}
+									</a>
+								</div>
 							</div>
-						</div>
-						<div className='col'>
-							{/* LANGUAGES */}
-							<div className='dropdown'>
-								<a
-									className='text-reset me-3 dropdown-toggle hidden-arrow'
-									href='#'
-									id='navbarDropdownMenuLink'
-									role='button'
-									data-mdb-toggle='dropdown'
-									aria-expanded='false'>
-									<i
-										className='fas fa-globe'
-										style={{ color: isDarkMode ? '#000000' : '#ffffff' }}></i>
-								</a>
-								<ul
-									className='dropdown-menu dropdown-menu-end'
-									aria-labelledby='navbarDropdownMenuLink'>
-									{languages.map(({ name, country_code }, index) => {
-										return (
-											<li key={index}>
-												<button
-													key={index}
-													className='dropdown-item'
-													onClick={() => {
-														i18next.changeLanguage(country_code);
-														window.location.reload();
-													}}
-													disabled={country_code === currentLngCode}>
-													<span
+							<div className='col'>
+								{/* LANGUAGES */}
+								<div className='dropdown'>
+									<a
+										className='text-reset me-3 dropdown-toggle hidden-arrow'
+										href='#'
+										id='navbarDropdownMenuLink'
+										role='button'
+										data-mdb-toggle='dropdown'
+										aria-expanded='false'>
+										<i
+											className='fas fa-globe'
+											style={{
+												color: isDarkMode ? '#ffffff' : '#000000',
+											}}></i>
+									</a>
+									<ul
+										className='dropdown-menu dropdown-menu-end'
+										aria-labelledby='navbarDropdownMenuLink'>
+										{languages.map(({ name, country_code }, index) => {
+											return (
+												<li key={index}>
+													<button
 														key={index}
-														className={`fi fi-${country_code} fis mx-3`}
-														style={{
-															opacity:
-																country_code === currentLngCode ? 0.5 : 1,
+														className='dropdown-item'
+														onClick={() => {
+															i18next.changeLanguage(country_code);
+															window.location.reload();
 														}}
-													/>
+														disabled={country_code === currentLngCode}>
+														<span
+															key={index}
+															className={`fi fi-${country_code} fis mx-3`}
+															style={{
+																opacity:
+																	country_code === currentLngCode ? 0.5 : 1,
+															}}
+														/>
 
-													{name}
-												</button>
-											</li>
-										);
-									})}
-								</ul>
+														{name}
+													</button>
+												</li>
+											);
+										})}
+									</ul>
+								</div>
 							</div>
-						</div>
-						<div className='col'>
-							{/* BUTTONS */}
-							<div className='d-grid gap-3'>
-								{isLoggedIn ? (
-									<div className='d-flex justify-content-between align-items-center'>
-										<img
-											src='./images/profile.jpg'
-											alt='Bootstrap'
-											width='45'
-											height='45'
-										/>
-
-										<button
-											className='btn btn-danger'
-											type='button'
-											style={{ minWidth: '100px' }}
-											onClick={() => {
-												setIsLoggedIn(!isLoggedIn);
-											}}>
-											salir
-										</button>
-									</div>
-								) : (
+							<div className='col'>
+								{/* LOGIN */}
+								<div className='d-grid'>
 									<div>
 										<button
 											className='btn btn-primary'
@@ -175,10 +167,105 @@ function Navbar() {
 											acceso
 										</button>
 									</div>
-								)}
+								</div>
 							</div>
 						</div>
-					</div>
+					) : (
+						<div className='row d-flex align-items-center'>
+							<div className='col'>
+								{/* DARK MODE */}
+								<div className='dropdown'>
+									<a
+										className='text-reset me-3'
+										href='#'
+										role='button'
+										aria-expanded='false'
+										onClick={() => {
+											Cookies.set('darkMode', !isDarkMode);
+											setIsDarkMode(!isDarkMode);
+										}}>
+										{isDarkMode ? (
+											<i className='fas fa-sun' style={{ color: '#ffffff' }} />
+										) : (
+											<i className='fas fa-moon' style={{ color: '#000000' }} />
+										)}
+									</a>
+								</div>
+							</div>
+							<div className='col'>
+								{/* LANGUAGES */}
+								<div className='dropdown'>
+									<a
+										className='text-reset me-3 dropdown-toggle hidden-arrow'
+										href='#'
+										id='navbarDropdownMenuLink'
+										role='button'
+										data-mdb-toggle='dropdown'
+										aria-expanded='false'>
+										<i
+											className='fas fa-globe'
+											style={{
+												color: isDarkMode ? '#ffffff' : '#000000',
+											}}></i>
+									</a>
+									<ul
+										className='dropdown-menu dropdown-menu-end'
+										aria-labelledby='navbarDropdownMenuLink'>
+										{languages.map(({ name, country_code }, index) => {
+											return (
+												<li key={index}>
+													<button
+														key={index}
+														className='dropdown-item'
+														onClick={() => {
+															i18next.changeLanguage(country_code);
+															window.location.reload();
+														}}
+														disabled={country_code === currentLngCode}>
+														<span
+															key={index}
+															className={`fi fi-${country_code} fis mx-3`}
+															style={{
+																opacity:
+																	country_code === currentLngCode ? 0.5 : 1,
+															}}
+														/>
+
+														{name}
+													</button>
+												</li>
+											);
+										})}
+									</ul>
+								</div>
+							</div>
+							<div className='col'>
+								{/* PROFILE */}
+								<img
+									src='./images/profile.jpg'
+									alt='Bootstrap'
+									width='45'
+									height='45'
+								/>
+							</div>
+							<div className='col'>
+								{/* LOGOUT */}
+								<div className='d-grid'>
+									<div>
+										<button
+											className='btn btn-danger'
+											type='button'
+											style={{ minWidth: '100px' }}
+											onClick={() => {
+												setIsLoggedIn(!isLoggedIn);
+											}}>
+											salir
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					)}
 				</div>
 			</div>
 		</nav>
