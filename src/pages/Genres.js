@@ -6,27 +6,48 @@ import Footer from '../components/Footer';
 
 function Genres() {
 	const genres = [
-		{ title: 'RPG', image: '' },
-		{ title: 'Driving', image: '' },
-		{ title: 'Sports', image: '' },
-		{ title: 'Shooter', image: '' },
-		{ title: 'Indie', image: '' },
-		{ title: 'Fighting', image: '' },
-		{ title: 'Horror', image: '' },
-		{ title: 'Simulator', image: '' },
-		{ title: 'Souls-like', image: '' },
-		{ title: 'Action - Adventure', image: '' },
-		{ title: 'MMO', image: '' },
-		{ title: 'Coop', image: '' },
-		{ title: 'Battle Royale', image: '' },
-		{ title: 'Puzzle', image: '' },
-		{ title: 'Platformer', image: '' },
+		{ title: 'RPG' },
+		{ title: 'Driving' },
+		{ title: 'Sports' },
+		{ title: 'Shooter' },
+		{ title: 'Indie' },
+		{ title: 'Fighting' },
+		{ title: 'Horror' },
+		{ title: 'Simulator' },
+		{ title: 'Souls-like' },
+		{ title: 'Action - Adventure' },
+		{ title: 'MMO' },
+		{ title: 'Coop' },
+		{ title: 'Battle Royale' },
+		{ title: 'Puzzle' },
+		{ title: 'Platformer' },
 	];
 
 	return (
-		<div style={{ position: 'relative', minHeight: '100vh' }}>
+		<div>
 			<Navbar />
 			{/* GRID */}
+			<div
+				style={{ position: 'relative', minHeight: '100vh' }}
+				className='d-flex justify-content-between align-items-center'>
+				<div className='container text-center'>
+					<div className='row'>
+						<div className='col'>Column</div>
+						<div className='col'>Column</div>
+						<div className='col'>Column</div>
+						<div className='col'>Column</div>
+						<div className='col'>Column</div>
+					</div>
+					<div className='row'>
+						<div className='col'>Column</div>
+						<div className='col'>Column</div>
+						<div className='col'>Column</div>
+					</div>
+					<div className='row'>
+						<div className='col'>Column</div>
+					</div>
+				</div>
+			</div>
 			<Footer />
 		</div>
 	);
