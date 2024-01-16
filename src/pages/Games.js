@@ -11,6 +11,11 @@ function Games() {
 		<div>
 			<Navbar />
 			{/* CAROUSEL */}
+			<div
+				style={{ position: 'relative', minHeight: '100vh' }}
+				className='d-flex justify-content-between align-items-center'>
+				<div className='container text-center'></div>
+			</div>
 			<Footer />
 		</div>
 	);
