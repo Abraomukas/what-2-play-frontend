@@ -7,21 +7,21 @@ import GenreBox from '../components/GenreBox';
 
 const Genres = () => {
 	const genres = [
-		{ title: 'RPG' },
-		{ title: 'Driving' },
-		{ title: 'Sports' },
-		{ title: 'Shooter' },
-		{ title: 'Indie' },
-		{ title: 'Fighting' },
-		{ title: 'Horror' },
-		{ title: 'Simulator' },
-		{ title: 'Souls-like' },
-		{ title: 'Action - Adventure' },
-		{ title: 'MMO' },
-		{ title: 'Coop' },
-		{ title: 'Battle Royale' },
-		{ title: 'Puzzle' },
-		{ title: 'Platformer' },
+		{ id: 1, title: 'RPG' },
+		{ id: 2, title: 'Driving' },
+		{ id: 3, title: 'Sports' },
+		{ id: 4, title: 'Shooter' },
+		{ id: 5, title: 'Indie' },
+		{ id: 6, title: 'Fighting' },
+		{ id: 7, title: 'Horror' },
+		{ id: 8, title: 'Simulator' },
+		{ id: 9, title: 'Souls-like' },
+		{ id: 10, title: 'Action - Adventure' },
+		{ id: 11, title: 'MMO' },
+		{ id: 12, title: 'Coop' },
+		{ id: 13, title: 'Battle Royale' },
+		{ id: 14, title: 'Puzzle' },
+		{ id: 15, title: 'Platformer' },
 	];
 
 	return (
@@ -32,8 +32,11 @@ const Genres = () => {
 				style={{ position: 'relative', minHeight: '100vh' }}
 				className='d-flex justify-content-between align-items-center'>
 				<div className='container text-center'>
-					{genres.map((index, title) => {
-						return <GenreBox key={index} title={title}></GenreBox>;
+					{genres.map((genre) => {
+						if (genre.id % 5 == 0) {
+							console.log('ROW');
+						}
+						return <GenreBox key={genre.id} title={genre.title} />;
 					})}
 				</div>
 			</div>
