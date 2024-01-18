@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 //* COMPONENTS
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { useEffect } from 'react';
+import GenreBox from '../components/GenreBox';
 
-function Genres() {
+const Genres = () => {
 	const genres = [
 		{ title: 'RPG' },
 		{ title: 'Driving' },
@@ -24,13 +24,6 @@ function Genres() {
 		{ title: 'Platformer' },
 	];
 
-	const rows = [];
-	console.log('BEFORE - ' + rows);
-	for (let i = 0; i < genres.length; i += 5) {
-		rows.push(genres.slice(i, i + 5));
-	}
-	console.log('AFTER - ' + rows);
-
 	return (
 		<div>
 			<Navbar />
@@ -39,20 +32,14 @@ function Genres() {
 				style={{ position: 'relative', minHeight: '100vh' }}
 				className='d-flex justify-content-between align-items-center'>
 				<div className='container text-center'>
-					{rows.map((row, rowIndex) => {
-						<div key={rowIndex} className='row'>
-							{row.map((title, index) => {
-								<div key={index} className='col'>
-									{title}
-								</div>;
-							})}
-						</div>;
+					{genres.map((index, title) => {
+						return <GenreBox key={index} title={title}></GenreBox>;
 					})}
 				</div>
 			</div>
 			<Footer />
 		</div>
 	);
-}
+};
 
 export default Genres;

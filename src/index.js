@@ -21,6 +21,7 @@ const spinnerFallback = (
 import ErrorPage from './pages/Error';
 import Main from './pages/Main';
 import Genres from './pages/Genres';
+import Games from './pages/Games';
 
 const router = createBrowserRouter([
 	{
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
 		errorElement: <ErrorPage />,
 	},
 	{ path: '/genres', element: <Genres />, errorElement: <ErrorPage /> },
-	{},
+	{ path: '/games', element: <Games />, errorElement: <ErrorPage /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
