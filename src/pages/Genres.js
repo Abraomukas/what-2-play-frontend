@@ -32,12 +32,30 @@ const Genres = () => {
 				style={{ position: 'relative', minHeight: '100vh' }}
 				className='d-flex justify-content-between align-items-center'>
 				<div className='container text-center'>
+					<div>
+						<div className='row'>
+							{genres.map((genre) => {
+								if (genre.id < 6) {
+									return (
+										<div className='col'>
+											<GenreBox key={genre.id} title={genre.title} />
+										</div>
+									);
+								}
+							})}
+						</div>
+						<div className='row'></div>
+						<div className='row'></div>
+					</div>
+
+					{/* 					
 					{genres.map((genre) => {
 						if (genre.id % 5 == 0) {
 							console.log('ROW');
 						}
 						return <GenreBox key={genre.id} title={genre.title} />;
 					})}
+					 */}
 				</div>
 			</div>
 			<Footer />
