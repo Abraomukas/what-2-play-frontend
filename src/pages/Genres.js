@@ -44,8 +44,28 @@ const Genres = () => {
 								}
 							})}
 						</div>
-						<div className='row'></div>
-						<div className='row'></div>
+						<div className='row'>
+							{genres.map((genre) => {
+								if (genre.id > 5 && genre.id < 11) {
+									return (
+										<div className='col'>
+											<GenreBox key={genre.id} title={genre.title} />
+										</div>
+									);
+								}
+							})}
+						</div>
+						<div className='row'>
+							{genres.map((genre) => {
+								if (genre.id > 10) {
+									return (
+										<div className='col'>
+											<GenreBox key={genre.id} title={genre.title} />
+										</div>
+									);
+								}
+							})}
+						</div>
 					</div>
 
 					{/* 					
