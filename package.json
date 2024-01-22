@@ -4,15 +4,24 @@
 	"private": true,
 	"description": "What2Play - ",
 	"dependencies": {
+		"@emotion/react": "^11.11.3",
+		"@emotion/styled": "^11.11.0",
+		"@mui/icons-material": "^5.15.6",
+		"@mui/material": "^5.15.6",
+		"@mui/system": "^5.15.6",
 		"i18next": "^23.7.16",
 		"js-cookie": "^3.0.5",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
+		"react": "^17.0.0 || ^18.0.0",
+		"react-dom": "^17.0.0 || ^18.0.0",
 		"react-router-dom": "^6.21.1"
 	},
 	"devDependencies": {
 		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
 		"react-scripts": "^5.0.1"
+	},
+	"peerDependencies": {
+		"react": "^17.0.0 || ^18.0.0",
+		"react-dom": "^17.0.0 || ^18.0.0"
 	},
 	"scripts": {
 		"start": "react-scripts start"
