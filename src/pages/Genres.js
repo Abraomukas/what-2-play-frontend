@@ -32,6 +32,7 @@ const Genres = () => {
 				style={{ position: 'relative', minHeight: '100vh' }}
 				className='d-flex justify-content-between align-items-center'>
 				<div className='container text-center'>
+					{/*
 					<div>
 						<div className='row'>
 							{genres.map((genre) => {
@@ -66,6 +67,11 @@ const Genres = () => {
 								}
 							})}
 						</div>
+					</div>
+						*/}
+
+					<div>
+						<GenreBox />
 					</div>
 
 					{/* 					
