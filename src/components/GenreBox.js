@@ -20,13 +20,13 @@ function GenreBox(props) {
 				<Box
 					component='img'
 					sx={{
-						height: 233,
-						width: 350,
-						maxHeight: { xs: 233, md: 167 },
-						maxWidth: { xs: 350, md: 250 },
+						height: { xs: 'auto', md: 167 },
+						width: { xs: 'auto', md: 250 },
+						maxWidth: '100%',
+						objectFit: 'cover',
 					}}
-					alt='The house from the offer.'
-					src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2'
+					alt='Returnal'
+					src='./images/returnal.webp'
 				/>
 				<Box
 					sx={{
@@ -36,11 +36,8 @@ function GenreBox(props) {
 						m: 3,
 						minWidth: { md: 350 },
 					}}>
-					<Box component='span' sx={{ fontSize: 16, mt: 1 }}>
-						123 Main St, Phoenix AZ
-					</Box>
 					<Box component='span' sx={{ color: 'primary.main', fontSize: 22 }}>
-						$280,000 — $310,000
+						Returnal
 					</Box>
 					<Box
 						sx={{
@@ -60,7 +57,7 @@ function GenreBox(props) {
 							},
 						}}>
 						<ErrorOutlineIcon />
-						CONFIDENCE SCORE 85%
+						PLATINUM
 					</Box>
 				</Box>
 			</Box>
