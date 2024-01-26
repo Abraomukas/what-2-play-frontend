@@ -3,7 +3,7 @@ import React from 'react';
 //* COMPONENTS
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import GenreBox from '../components/GenreBox';
+import GameBox from '../components/GameBox';
 
 const Genres = () => {
 	const genres = [
@@ -32,56 +32,59 @@ const Genres = () => {
 				style={{ position: 'relative', minHeight: '100vh' }}
 				className='d-flex justify-content-between align-items-center'>
 				<div className='container text-center'>
-					{/*
-					<div>
-						<div className='row'>
-							{genres.map((genre) => {
-								if (genre.id < 6) {
-									return (
-										<div className='col'>
-											<GenreBox key={genre.id} title={genre.title} />
-										</div>
-									);
-								}
-							})}
+					<div class='row row-cols-5 row-cols-md-5 g-4'>
+						<div class='col'>
+							<div class='card'>
+								<img src='...' class='card-img-top' alt='...' />
+								<div class='card-body'>
+									<h5 class='card-title'>Card title</h5>
+									<p class='card-text'>
+										This is a longer card with supporting text below as a
+										natural lead-in to additional content. This content is a
+										little bit longer.
+									</p>
+								</div>
+							</div>
 						</div>
-						<div className='row'>
-							{genres.map((genre) => {
-								if (genre.id > 5 && genre.id < 11) {
-									return (
-										<div className='col'>
-											<GenreBox key={genre.id} title={genre.title} />
-										</div>
-									);
-								}
-							})}
+						<div class='col'>
+							<div class='card'>
+								<img src='...' class='card-img-top' alt='...' />
+								<div class='card-body'>
+									<h5 class='card-title'>Card title</h5>
+									<p class='card-text'>
+										This is a longer card with supporting text below as a
+										natural lead-in to additional content. This content is a
+										little bit longer.
+									</p>
+								</div>
+							</div>
 						</div>
-						<div className='row'>
-							{genres.map((genre) => {
-								if (genre.id > 10) {
-									return (
-										<div className='col'>
-											<GenreBox key={genre.id} title={genre.title} />
-										</div>
-									);
-								}
-							})}
+						<div class='col'>
+							<div class='card'>
+								<img src='...' class='card-img-top' alt='...' />
+								<div class='card-body'>
+									<h5 class='card-title'>Card title</h5>
+									<p class='card-text'>
+										This is a longer card with supporting text below as a
+										natural lead-in to additional content.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class='col'>
+							<div class='card'>
+								<img src='...' class='card-img-top' alt='...' />
+								<div class='card-body'>
+									<h5 class='card-title'>Card title</h5>
+									<p class='card-text'>
+										This is a longer card with supporting text below as a
+										natural lead-in to additional content. This content is a
+										little bit longer.
+									</p>
+								</div>
+							</div>
 						</div>
 					</div>
-						*/}
-
-					<div>
-						<GenreBox />
-					</div>
-
-					{/* 					
-					{genres.map((genre) => {
-						if (genre.id % 5 == 0) {
-							console.log('ROW');
-						}
-						return <GenreBox key={genre.id} title={genre.title} />;
-					})}
-					 */}
 				</div>
 			</div>
 			<Footer />
