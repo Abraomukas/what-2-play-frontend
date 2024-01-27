@@ -3,15 +3,13 @@ import Box from '@mui/material/Box';
 import { alpha } from '@mui/material/styles';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
-function GenreBox(props) {
+function GameBox(props) {
 	return (
 		<div>
 			<Box
 				sx={{
 					display: 'flex',
-					flexDirection: { xs: 'column', md: 'row' },
 					alignItems: 'center',
-					bgcolor: 'background.paper',
 					overflow: 'hidden',
 					borderRadius: '12px',
 					boxShadow: 1,
@@ -57,11 +55,11 @@ function GenreBox(props) {
 							},
 						}}>
 						<ErrorOutlineIcon />
-						PLATINUM
+						Shooters
 					</Box>
 				</Box>
 			</Box>
 		</div>
 	);
 }
-export default GenreBox;
+export default GameBox;
