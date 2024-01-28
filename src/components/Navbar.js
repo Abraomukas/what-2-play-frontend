@@ -10,7 +10,7 @@ const languages = [
 ];
 
 const sections = [
-	{ label: 'Games', to: '/games' },
+	{ label: 'Franchises', to: '/franchises' },
 	{ label: 'Genres', to: '/genres' },
 ];
 
