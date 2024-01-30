@@ -9,7 +9,7 @@ const Genres = () => {
 	const genres = [
 		{ title: 'RPG' },
 		{ title: 'Driving' },
-		{ title: 'Sports' },
+		{ title: 'Sport' },
 		{ title: 'Shooter' },
 		{ title: 'Indie' },
 		{ title: 'Fighting' },
