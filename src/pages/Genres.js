@@ -3,7 +3,6 @@ import React from 'react';
 //* COMPONENTS
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import GameBox from '../components/GameBox';
 
 const Genres = () => {
 	const genres = [
@@ -30,7 +29,7 @@ const Genres = () => {
 			{/* GRID */}
 			<div
 				style={{ position: 'relative', minHeight: '100vh' }}
-				className='d-flex justify-content-between align-items-center'>
+				className='d-flex justify-content-between align-items-center my-5'>
 				<div className='container text-center'>
 					<div className='row row-cols-5 row-cols-md-5 g-4'>
 						{genres.map(({ title }, index) => {
@@ -38,7 +37,7 @@ const Genres = () => {
 								<div key={index} className='col'>
 									<div className='card'>
 										<img
-											src='...'
+											src='./images/returnal.webp'
 											className='card-img-top'
 											alt={`${title} games`}
 										/>
