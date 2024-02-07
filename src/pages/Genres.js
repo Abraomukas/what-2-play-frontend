@@ -14,7 +14,7 @@ const Genres = () => {
 		{ title: 'Fighting' },
 		{ title: 'Horror' },
 		{ title: 'Simulator' },
-		{ title: 'Souls-like' },
+		{ title: 'Souls-like', picture: 'returnal.webp' },
 		{ title: 'Action - Adventure' },
 		{ title: 'MMO' },
 		{ title: 'Coop' },
@@ -32,12 +32,12 @@ const Genres = () => {
 				className='d-flex justify-content-between align-items-center my-5'>
 				<div className='container text-center'>
 					<div className='row row-cols-5 row-cols-md-5 g-4'>
-						{genres.map(({ title }, index) => {
+						{genres.map(({ title, picture }, index) => {
 							return (
 								<div key={index} className='col'>
 									<div className='card'>
 										<img
-											src='./images/returnal.webp'
+											src={`./images/${picture}`}
 											className='card-img-top'
 											alt={`${title} games`}
 										/>
