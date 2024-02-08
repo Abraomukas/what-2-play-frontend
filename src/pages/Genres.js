@@ -6,8 +6,8 @@ import Footer from '../components/Footer';
 
 const Genres = () => {
 	const genres = [
-		{ title: 'RPG' },
-		{ title: 'Driving' },
+		{ title: 'RPG', picture: 'final-fantasy-xvi.webp' },
+		{ title: 'Driving', picture: 'nfs-unbound.webp' },
 		{ title: 'Sport' },
 		{ title: 'Shooter' },
 		{ title: 'Indie' },
