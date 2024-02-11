@@ -8,7 +8,7 @@ const Genres = () => {
 	const genres = [
 		{ title: 'RPG', picture: 'final-fantasy-xvi.webp' },
 		{ title: 'Driving', picture: 'nfs-unbound.webp' },
-		{ title: 'Sport' },
+		{ title: 'Sport', picture: 'nba-2k23.webp' },
 		{ title: 'Shooter' },
 		{ title: 'Indie' },
 		{ title: 'Fighting' },
