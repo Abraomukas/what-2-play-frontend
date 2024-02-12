@@ -9,7 +9,7 @@ const Genres = () => {
 		{ title: 'RPG', picture: 'final-fantasy-xvi.webp' },
 		{ title: 'Driving', picture: 'nfs-unbound.webp' },
 		{ title: 'Sport', picture: 'nba-2k23.webp' },
-		{ title: 'Shooter' },
+		{ title: 'Shooter', picture: 'borderlands-2.webp' },
 		{ title: 'Indie' },
 		{ title: 'Fighting' },
 		{ title: 'Horror' },
