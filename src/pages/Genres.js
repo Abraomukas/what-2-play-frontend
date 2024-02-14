@@ -11,7 +11,7 @@ const Genres = () => {
 		{ title: 'Sport', picture: 'nba-2k23.webp' },
 		{ title: 'Shooter', picture: 'borderlands-2.webp' },
 		{ title: 'Indie', picture: 'nobody-saves-the-world.webp' },
-		{ title: 'Fighting' },
+		{ title: 'Fighting', picture: 'kakarot.webp' },
 		{ title: 'Horror' },
 		{ title: 'Simulator' },
 		{ title: 'Souls-like', picture: 'returnal.webp' },
