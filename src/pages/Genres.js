@@ -13,7 +13,7 @@ const Genres = () => {
 		{ title: 'Indie', picture: 'nobody-saves-the-world.webp' },
 		{ title: 'Fighting', picture: 'kakarot.webp' },
 		{ title: 'Horror', picture: 'until-dawn.webp' },
-		{ title: 'Simulator' },
+		{ title: 'Simulator', picture: 'power-wash-sim.webp' },
 		{ title: 'Souls-like', picture: 'returnal.webp' },
 		{ title: 'Action - Adventure' },
 		{ title: 'MMO' },
