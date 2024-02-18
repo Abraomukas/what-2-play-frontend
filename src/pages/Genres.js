@@ -16,7 +16,7 @@ const Genres = () => {
 		{ title: 'Simulator', picture: 'power-wash-sim.webp' },
 		{ title: 'Souls-like', picture: 'dark-souls-remastered.webp' },
 		{ title: 'Action - Adventure', picture: 'guardians-of-the-galaxy.webp' },
-		{ title: 'MMO' },
+		{ title: 'MMO', picture: 'final-fantasy-xiv.webp' },
 		{ title: 'Coop' },
 		{ title: 'Battle Royale' },
 		{ title: 'Puzzle' },
