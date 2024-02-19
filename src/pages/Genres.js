@@ -17,7 +17,7 @@ const Genres = () => {
 		{ title: 'Souls-like', picture: 'dark-souls-remastered.webp' },
 		{ title: 'Action - Adventure', picture: 'guardians-of-the-galaxy.webp' },
 		{ title: 'MMO', picture: 'final-fantasy-xiv.webp' },
-		{ title: 'Coop' },
+		{ title: 'Coop', picture: 'overcooked-2.webp' },
 		{ title: 'Battle Royale' },
 		{ title: 'Puzzle' },
 		{ title: 'Platformer' },
