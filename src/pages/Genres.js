@@ -18,7 +18,7 @@ const Genres = () => {
 		{ title: 'Action - Adventure', picture: 'guardians-of-the-galaxy.webp' },
 		{ title: 'MMO', picture: 'final-fantasy-xiv.webp' },
 		{ title: 'Coop', picture: 'overcooked-2.webp' },
-		{ title: 'Battle Royale' },
+		{ title: 'Battle Royale', picture: 'super-animal-royale.webp' },
 		{ title: 'Puzzle' },
 		{ title: 'Platformer' },
 	];
