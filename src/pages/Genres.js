@@ -19,7 +19,7 @@ const Genres = () => {
 		{ title: 'MMO', picture: 'final-fantasy-xiv.webp' },
 		{ title: 'Coop', picture: 'overcooked-2.webp' },
 		{ title: 'Battle Royale', picture: 'super-animal-royale.webp' },
-		{ title: 'Puzzle' },
+		{ title: 'Puzzle', picture: 'chicory.webp' },
 		{ title: 'Platformer' },
 	];
 
