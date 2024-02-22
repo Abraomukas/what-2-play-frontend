@@ -20,7 +20,7 @@ const Genres = () => {
 		{ title: 'Coop', picture: 'overcooked-2.webp' },
 		{ title: 'Battle Royale', picture: 'super-animal-royale.webp' },
 		{ title: 'Puzzle', picture: 'chicory.webp' },
-		{ title: 'Platformer' },
+		{ title: 'Platformer', picture: 'hollow-knight.webp' },
 	];
 
 	return (
