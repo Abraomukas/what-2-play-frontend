@@ -6,21 +6,25 @@ import Footer from '../components/Footer';
 
 const Genres = () => {
 	const genres = [
-		{ title: 'RPG', picture: 'final-fantasy-xvi.webp' },
-		{ title: 'Driving', picture: 'nfs-unbound.webp' },
-		{ title: 'Sport', picture: 'nba-2k23.webp' },
-		{ title: 'Shooter', picture: 'borderlands-2.webp' },
-		{ title: 'Indie', picture: 'nobody-saves-the-world.webp' },
-		{ title: 'Fighting', picture: 'kakarot.webp' },
-		{ title: 'Horror', picture: 'until-dawn.webp' },
-		{ title: 'Simulator', picture: 'power-wash-sim.webp' },
-		{ title: 'Souls-like', picture: 'dark-souls-remastered.webp' },
-		{ title: 'Action - Adventure', picture: 'guardians-of-the-galaxy.webp' },
-		{ title: 'MMO', picture: 'final-fantasy-xiv.webp' },
-		{ title: 'Coop', picture: 'overcooked-2.webp' },
-		{ title: 'Battle Royale', picture: 'super-animal-royale.webp' },
-		{ title: 'Puzzle', picture: 'chicory.webp' },
-		{ title: 'Platformer', picture: 'hollow-knight.webp' },
+		{ title: 'RPG', picture: 'final-fantasy-xvi.webp', path: '' },
+		{ title: 'Driving', picture: 'nfs-unbound.webp', path: '' },
+		{ title: 'Sport', picture: 'nba-2k23.webp', path: '' },
+		{ title: 'Shooter', picture: 'borderlands-2.webp', path: '' },
+		{ title: 'Indie', picture: 'nobody-saves-the-world.webp', path: '' },
+		{ title: 'Fighting', picture: 'kakarot.webp', path: '' },
+		{ title: 'Horror', picture: 'until-dawn.webp', path: '' },
+		{ title: 'Simulator', picture: 'power-wash-sim.webp', path: '' },
+		{ title: 'Souls-like', picture: 'dark-souls-remastered.webp', path: '' },
+		{
+			title: 'Action - Adventure',
+			picture: 'guardians-of-the-galaxy.webp',
+			path: '',
+		},
+		{ title: 'MMO', picture: 'final-fantasy-xiv.webp', path: '' },
+		{ title: 'Coop', picture: 'overcooked-2.webp', path: '' },
+		{ title: 'Battle Royale', picture: 'super-animal-royale.webp', path: '' },
+		{ title: 'Puzzle', picture: 'chicory.webp', path: '' },
+		{ title: 'Platformer', picture: 'hollow-knight.webp', path: '' },
 	];
 
 	return (
