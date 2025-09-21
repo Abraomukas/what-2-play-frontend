@@ -6,8 +6,29 @@ import Footer from "../components/Footer";
 
 function Franchises() {
   const franchises = [
-    { title: "Final Fantasy", picture: "final-fantasy-xvi.webp", path: "" },
-    { title: "Need for Speed", picture: "nfs-unbound.webp", path: "" },
+    {
+      title: "Final Fantasy",
+      picture: "franchises/final-fantasy-xvi.webp",
+      path: "",
+    },
+    {
+      title: "Need for Speed",
+      picture: "franchises/nfs-unbound.webp",
+      path: "",
+    },
+    { title: "NBA 2K", picture: "franchises/nba-2k23.webp", path: "" },
+    {
+      title: "Borderlands",
+      picture: "franchises/borderlands-2.webp",
+      path: "",
+    },
+    { title: "Dragon Ball", picture: "franchises/kakarot.webp", path: "" },
+    {
+      title: "Dark Souls",
+      picture: "franchises/dark-souls-remastered.webp",
+      path: "",
+    },
+    { title: "Overcooked", picture: "franchises/overcooked-2.webp", path: "" },
   ];
 
   return (
